@@ -1,0 +1,16 @@
+.main-game-s {
+    border: 1%;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    border-color: #4B6587;
+    background-color: #4B6587;
+    margin-top: 10%;
+}
+
+#start-button {
+    display: flex;
+    margin-top: 10%;
+    background-color: #C8C6C6;
+    border: #C8C6C6;
+}
