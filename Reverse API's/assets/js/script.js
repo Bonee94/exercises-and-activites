@@ -2,6 +2,7 @@ var requestUrl = 'https://api.github.com/orgs/Netflix/repos';
 
 // JQuery AJAX
 // TODO: Comment on how AJAX returns an API call
+//This method is sending an api request using JQUERY and then printing it to the console.log
 $.ajax({
   url: requestUrl,
   method: 'GET',
@@ -12,6 +13,7 @@ $.ajax({
 
 // Browser Fetch Method
 // TODO: Comment on how Fetch returns an API call
+//Fetch requires one argument to retrieve the url then the returned string has to be parsed through the json method
 fetch(requestUrl)
   .then(function (response) {
     return response.json();
