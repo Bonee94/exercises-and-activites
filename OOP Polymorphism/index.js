@@ -13,19 +13,25 @@ function Student(first, last, age) {
       throw new Error('no grade provided');
     }
     let response;
-    // Return a letter grade if a number grade was passed
-    // Ex. 95 => 'A'
+    
     if (typeof input === 'number') {
-      // TODO: Add logic here to return a single letter grade
       if (inRange(input, 90, 100)) {
-        response = 'A'
+        response = 'A';
+      } else if (inRange(input, 80, 89)) {
+        response = 'B';
+      } else if (inRange(input, 70, 79)) {
+        response = 'C';
+      } else if (inRange(input, 60, 69)) {
+        response = 'D';
+      } else if (inRange(input, 0, 59)) {
+        response = 'F';
       }
       return response;
     }
-    // Return a range if a letter grade was passed
-    // Ex. 'A' => '90 - 100'
+
     if (typeof input === 'string') {
-      // TODO: Add logic here to return range as a string
+      
+
       return response;
     }
   };
