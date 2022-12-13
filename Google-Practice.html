@@ -8,8 +8,9 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
+        margin: 2% 5%;
         height: 50%;
-        width: 50%;
+        width: 90%;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -18,19 +19,33 @@
         padding: 0;
       }
     </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    
   </head>
   <body>
     <div id="map"></div>
+    <div id="setPanel"></div>
     <button id="change">changelocation</button>
+    <input type="text" placeholder="Enter Start Loacation" id="startLoc">
+    <input type="text" placeholder="Enter End Loacation" id="endLoc">
+    <button id="searchButton">Get Directions</button>
+
+
     <script>
-      var map;
+
+      var searchButton = document.getElementById('searchButton');
+      let map;
       function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
+        const directionsRenderer = new google.maps.DirectionsRenderer();
+        const directionsService = new google.maps.DirectionsService();
+        const map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 41.85, lng: -87.65},
           zoom: 8,
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          //mapTypeId: google.maps.MapTypeId.ROADMAP,
+          disableDefaultUI: true,
         });
       };
+
 
       var inputLocation = [29.4252, -98.4946]
       console.log(inputLocation);
@@ -43,16 +58,17 @@
         position: newLocationZoomedTO,
         map: map})
         console.log("changed center of map");
+        console.log(newLocationZoomedTO);
 
-        map.setCenter(newLocationZoomedTO)
+        map.setCenter({lat: 29.4252, lng: -98.4946});
         }
 
         var changeEl = document.getElementById('change');
         changeEl.addEventListener('click', changelocation.bind(null, inputLocation[0], inputLocation[1]), false)
 
-        
+        window.initMap = initMap;
       </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNoCGvv588RGUOYyIPoRXZlS1SezWenwk&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNoCGvv588RGUOYyIPoRXZlS1SezWenwk&callback=initMap&v=weekly"
     async defer></script>
   </body>
 </html>
