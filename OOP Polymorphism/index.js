@@ -25,12 +25,28 @@ function Student(first, last, age) {
         response = 'D';
       } else if (inRange(input, 0, 59)) {
         response = 'F';
+      } else {
+        response = "Error: Invalid input"
       }
       return response;
     }
 
     if (typeof input === 'string') {
-      
+      letterGrade = input.toUpperCase();
+
+      if (letterGrade === 'A') {
+        response = '90 - 100'
+      } else if (letterGrade === 'B') {
+        response = '80 - 89'
+      } else if (letterGrade === 'C') {
+        response = '70 - 79'
+      } else if (letterGrade === 'D') {
+        response = '60 - 69'
+      } else if (letterGrade === 'F') {
+        response = '0 - 59'
+      } else {
+        response = 'Error: Invalid input'
+      }
 
       return response;
     }
@@ -38,5 +54,5 @@ function Student(first, last, age) {
 }
 
 const John = new Student('John', 'Appleseed', '30');
-console.log('John.displayGrade():', John.displayGrade(95));
-console.log('John.displayGrade():', John.displayGrade('B'));
+console.log('John.displayGrade():', John.displayGrade(99));
+console.log('John.displayGrade():', John.displayGrade('A'));
