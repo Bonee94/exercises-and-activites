@@ -7,12 +7,16 @@ class Boat extends Vehicle {
   constructor(passengersLimit, boatName, type, passengers) {
     const name = boatName;
     const wheelCount = 0;
-    const sound = 'bwom';
+    const sound = 'BWOM!';
     const boatType = type;
     const passengersList = passengers;
 
 
     super(name, wheelCount, sound);
+  }
+
+  useHorn() {
+    console.log(`AAHHHOOOYYY!! **${this.sound}**`)
   }
 
 }
