@@ -6,10 +6,12 @@ class Store {
   }
 
   processProductSale(name) {
-    this.stock.forEach((item) => {
+    this.stock.forEach(item => {
       if (item.name === name) {
         if (item.count > 0) {
           // TODO: Decrement the store's stock of item
+          item.count--;
+          this.revenue += item.price;
           // TODO: Increase the store's revenue
           console.log(`Purchased ${item.name} for ${item.price}`);
         } else {
@@ -23,6 +25,7 @@ class Store {
     this.stock.forEach((item) => {
       if (item.name === name) {
         // TODO: Increase the store's stock of item
+        item.count = item.count + count;
         console.log(`Replenished ${item.name} by ${item.count}`);
       }
     });

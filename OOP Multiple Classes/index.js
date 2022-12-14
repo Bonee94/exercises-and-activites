@@ -2,7 +2,7 @@ const Store = require('./store');
 const { toys } = require('./toy');
 
 const store = new Store("Big Al's Toy Barn", toys);
-
+// console.log(`these are toys ${toys}`)
 store.welcome();
 store.processProductSale('Action Figure');
 store.processProductSale('Action Figure');
